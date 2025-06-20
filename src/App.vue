@@ -105,7 +105,7 @@ export default {
       @delete="deleteUser"
     />
     <Modal v-if="showForm" @close="showForm = false">
-      <UserForm :users="users" @save="addUser" />
+      <UserForm :users="users" @save="addUser" @close="showForm = false" />
     </Modal>
   </div>
 </template>
