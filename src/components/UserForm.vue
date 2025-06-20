@@ -33,6 +33,13 @@ export default {
   },
   methods: {
     onSubmit() {
+      const cleanPhone = this.phone.replace(/\D/g, '');
+
+      if (cleanPhone.length < 11) {
+        alert('Введите полный номер телефона');
+        return;
+      }
+
       const user = {
         id: Date.now().toString(),
         name: this.name,
